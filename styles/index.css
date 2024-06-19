@@ -1,0 +1,378 @@
+:root {
+    /*--vista-blue: hsla(212, 43%, 65%, 1);*/
+    /*--rose-taupe: hsla(358, 24%, 52%, 1);*/
+    /*--cosmic-latte: hsla(49, 60%, 93%, 1);*/
+    /*--gunmetal: hsla(229, 19%, 22%, 1);*/
+    /*--chestnut: hsla(6, 42%, 42%, 1);*/
+    --vista-blue: hsla(212, 43%, 65%, 1);
+    --rose-taupe: hsla(358, 24%, 52%, 1);
+    --cosmic-latte: hsla(49, 60%, 93%, 1);
+    --gunmetal: hsla(229, 19%, 22%, 1);
+    --chestnut: hsla(6, 42%, 42%, 1);
+    --header-height: 60px;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 5px)
+}
+
+* {
+
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--gunmetal);
+    color: var(--cosmic-latte);
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+.title {
+    font-size: 4em;
+    letter-spacing: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.link {
+    color: var(--vista-blue);
+
+}
+
+main {
+    padding-top: var(--header-height)
+}
+
+header {
+    background: transparent;
+    backdrop-filter: blur(8px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    min-height: var(--header-height);
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+}
+
+.menu {
+    display: none;
+    grid-column: 11 / span 1;
+    align-self: center;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    background: var(--chestnut);
+    transition: box-shadow ease-out 100ms;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    box-shadow: 0px 0px 8px -1px rgba(255, 255, 255, 0.3);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+}
+
+.v-center {
+    align-self: center;
+}
+
+.h-center {
+    justify-self: center;
+}
+
+.logo {
+    grid-column: 2 / span 2;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-self: center;
+}
+
+.logo h3 {
+    cursor: pointer;
+}
+
+.main-nav {
+    grid-column: 6 / span 6;
+    align-self: center;
+    justify-self: end;
+    font-size: 1.25em;
+    display: flex;
+    gap: 24px;
+}
+
+.main-nav a {
+    position: relative;
+    cursor: pointer;
+}
+
+.main-nav a::before {
+    content: '';
+    height: 4px;
+    width: 0;
+    position: absolute;
+    background-color: var(--rose-taupe);
+    left: 50%;
+    transition: left ease 200ms, width ease 200ms;
+    bottom: -8px;
+}
+
+.main-nav a:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 16px;
+    padding: 80px 0;
+    border-bottom: 10px dotted var(--vista-blue);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 0 solid transparent;
+    background-clip: padding-box;
+}
+
+tr > td + td {
+    border-left-width: 16px;
+}
+
+tr + tr > td {
+    border-top-width: 8px;
+}
+
+
+.wrapper:first-of-type {
+    padding-top: 0;
+}
+
+.content {
+    grid-column: 2 / span 10;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 16px 0;
+}
+
+.line {
+    width: 2px;
+    height: 48px;
+    background: var(--cosmic-latte);
+}
+
+.socials a {
+    cursor: pointer;
+}
+
+.socials a > i:hover {
+    color: var(--chestnut)
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+input, textarea {
+    width: 100%;
+    display: block;
+    padding: 1em 1em;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+form > button {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.timeline {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 34em;
+}
+
+.checkpoint {
+    max-width: 34em;
+    padding: 2em 0;
+    position: relative;
+}
+
+.checkpoint .c {
+    border: 2px solid var(--cosmic-latte);
+    border-radius: 4px;
+    padding: 1.5em;
+    box-shadow: 0 0 7px -2px rgba(255 255 255 / 0.8);
+}
+
+.checkpoint:nth-child(odd) {
+    border-left: 3px solid #888;
+    padding-left: 3em;
+    transform: translateX(calc(50% - 3px));
+}
+
+.checkpoint:nth-child(even) {
+    border-right: 3px solid #888;
+    padding-right: 3em;
+    transform: translateX(calc(-50% - 1px));
+}
+
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before {
+    content: '';
+    background: #888;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkpoint:nth-child(odd)::before {
+    left: 0
+}
+
+
+.checkpoint:nth-child(even)::before {
+    right: 0
+}
+
+
+.checkpoint:nth-child(odd) div::before,
+.checkpoint:nth-child(even) div::before {
+    content: '';
+    background: #fff;
+    box-shadow: 0 0 0 4px var(--gunmetal);
+    width: 0.8em;
+    height: 0.8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+
+.checkpoint:nth-child(odd) div::before {
+    left: -0.5em;
+}
+
+.checkpoint:nth-child(even) div::before {
+    right: -0.5em;
+}
+
+@media screen and (max-width: 800px) {
+    h1,h2 {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        grid-column: 1 / span 12;
+    }
+
+    .main-nav a:hover {
+        background-color: var(--chestnut);
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .main-nav a:hover::before {
+        width: 0;
+    }
+
+    .vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--cosmic-latte);
+        box-shadow: 0 5px 5px -2px var(--cosmic-latte);
+    }
+
+    .vertical > a {
+        text-align: center;
+        padding: 0.5em 0;
+    }
+
+
+}
+
+@media screen and (max-width: 1150px) {
+    .timeline {
+        width: 80vw;
+    }
+
+    .timeline .checkpoint {
+        width: 100%;
+        transform: none;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+    }
+
+    .timeline .checkpoint::before {
+        width: 3px;
+        height: 4em;
+        top: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline .checkpoint div::before {
+        top: -0.5em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
