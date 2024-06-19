@@ -62,6 +62,10 @@ header {
     position: fixed;
 }
 
+header h4 {
+    margin: 0;
+}
+
 .menu {
     display: none;
     grid-column: 11 / span 1;
